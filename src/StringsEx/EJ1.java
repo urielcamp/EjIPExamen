@@ -59,13 +59,26 @@ public class EJ1 {
 
         //Verifica si la palabra tiene solo letras mayúsculas (A-Z) y su longitud es entre 3 y 6 caracteres.
 
-        System.out.println(validarMayusculas("SLFD"));
+        System.out.println(validarMayusculas("ASDF"));
 
         System.out.println(" ");
         System.out.println("-------------------------------------------------------");
         System.out.println("-----------------Ejercicio 4 --------------------------");
         System.out.println("-------------------------------------------------------");
         System.out.println(" ");
+
+        //Un palíndromo es una palabra que se lee igual al derecho y al revés, como "radar" o "ana".
+        //El método debe devolver true si la palabra es un palíndromo y false si no lo es.
+
+        System.out.println(esPalindromo("ana"));
+
+
+
+
+
+
+
+
     }
 
 
@@ -142,11 +155,35 @@ public class EJ1 {
         // Implementa aquí la lógica
 
         int n = palabra.length();
-        if()
+        if(n < 3 || n > 6){
+            return false;
+        }
+
+        String may = palabra.toUpperCase();
+
+        if (may == palabra){
+            return true;
+        }
 
 
-        return true;
+        return false;
     }
+
+
+    public static boolean esPalindromo(String palabra) {
+        // Implementa aquí la lógica
+
+        palabra = palabra.toLowerCase();
+
+        String invertida = new StringBuilder(palabra).reverse().toString();
+
+
+
+
+
+        return palabra.equals(invertida);
+    }
+
 
 
 
